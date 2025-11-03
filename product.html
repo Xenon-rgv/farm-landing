@@ -182,28 +182,40 @@
     </section>
 
     <section>
-        <div class="w-full flex justify-between items-center mt-6 px-4">
-            <div class="relative w-3/4 h-[44px] items-center sm:w-3/4 md:mx-6">
-                <i class="fa fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                <input type="text" placeholder="Search"
-                    class="w-full pl-10 pr-4 py-2 rounded-lg ring-[0.5px] ring-gray-300 bg-white focus:outline-none focus:ring-1 focus:ring-gray-100">
-            </div>
-            <div>
-                <button
-                    class="bg-white h-[44px] w-[52px] border border-gray-300 px-2 py-1 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors flex items-center justify-center">
-                    <img src="../Assets/Funnel.svg" alt="filter" class="h-[16px] w-[16px]">
-                </button>
-            </div>
+    <div class="w-full flex justify-between items-center mt-6 px-4">
+        <div class="relative w-3/4 h-[44px] items-center sm:w-3/4 md:mx-6">
+            <i class="fa fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Search products..."
+                class="w-full pl-10 pr-4 py-2 rounded-lg ring-[0.5px] ring-gray-300 bg-white focus:outline-none focus:ring-1 focus:ring-gray-400"
+            >
         </div>
-    </section>
-
-    <div class="w-full flex mt-8 justify-around items-center px-4">
-        <h2
-            class="w-[146px] h-[50px] flex justify-center items-center text-[#212121] text-[36px] leading-[140%] font-[600] font-roboto ">
-            Products
-        </h2>
-        <hr class="ring-[#CECECE] flex justify-center items-center ring-[0.3px] md:w-[1102px] w-[180px]" />
+        <div>
+            <button 
+                id="filterBtn"
+                class="bg-white h-[44px] w-[52px] border border-gray-300 px-2 py-1 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors flex items-center justify-center"
+            >
+                <img src="../Assets/Funnel.svg" alt="filter" class="h-[16px] w-[16px]">
+            </button>
+        </div>
     </div>
+</section>
+
+<div class="w-full flex mt-8 justify-around items-center px-4">
+    <h2 class="w-[146px] h-[50px] flex justify-center items-center text-[#212121] text-[36px] leading-[140%] font-[600] font-roboto">
+        Products
+    </h2>
+    <hr class="ring-[#CECECE] flex justify-center items-center ring-[0.3px] md:w-[1102px] w-[180px]" />
+</div>
+
+<!-- No Results Message -->
+<div id="noResults" class="hidden container mx-auto px-4 py-12 text-center">
+    <i class="fa fa-search text-gray-300 text-5xl mb-4"></i>
+    <p class="text-gray-500 text-lg">No products found matching your search.</p>
+    <p class="text-gray-400 text-sm mt-2">Try searching with different keywords</p>
+</div>
 
     <section class="py-12 bg-white">
         <div class="container mx-auto px-4">
@@ -833,7 +845,7 @@
     </footer>
 
    <script >
-  const dropdownBtn = document.getElementById("dropdownBtn");
+       const dropdownBtn = document.getElementById("dropdownBtn");
 const dropdownContent = document.getElementById("dropdownContent");
 const dropdownIcon = document.getElementById("dropdownIcon");
 
@@ -1061,7 +1073,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setupQuantityControls();
         }, 250);
     });
-});  
+});
        </script>
 </body>
 
