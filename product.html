@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a4d2e",
+                        "primary-light": "#2d6a4f",
+                        accent: "#e67e50",
+                        "accent-hover": "#d16a3f",
+                        alert: "#e63946",
+                        "custom-green": "#192E09",
+                        "green-gradient": "#004C35",
+                        "custom-orange": "#CA763A",
+                        "orange-gradient": "#E37D19",
+                    },
+                    fontFamily: {
+                        roboto: ["Roboto"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body>
+    <div
+        class="hidden md:flex justify-between gap-4 bg-white border-b-[0.5px] h-[44px] items-center px-4 font-roboto text-[14px] font-[400] text-gray-700">
+        <div class="flex gap-[8px] items-center justify-start ml-10">
+            <button class="flex gap-1 items-center justify-center px-2 hover:bg-gray-50 rounded transition-colors">
+                <svg class="h-[16px] w-[16px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
+                    </path>
+                </svg>
+                <span class="font-semibold">English</span>
+                <svg class="h-[16px] w-[16px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            <button class="flex gap-1 items-center px-2 hover:bg-gray-50 rounded transition-colors">
+                <svg class="h-[16px] w-[16px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                    </path>
+                </svg>
+                <span class="font-semibold">Select location</span>
+                <svg class="h-[16px] w-[16px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div class="flex gap-[4px] items-center justify-center">
+            <button class="flex items-center px-4 py-2 hover:bg-gray-50 rounded transition-colors">
+                <span class="font-semibold"><img src="../Assets/bell.svg" alt="bell" class="h-[24px] w-[24px]"></span>
+            </button>
+            <button class="flex gap-1 items-center px-4 py-2 hover:bg-gray-50 rounded transition-colors">
+                <span class="font-semibold"><img src="../Assets/cart.svg" alt="cart" class="h-[24px] w-[24px]"></span>
+            </button>
+            <button class="flex gap-1 items-center px-4 py-2 hover:bg-gray-50 rounded-lg transition-colors">
+                <span class="font-semibold"><img src="../Assets/initials.svg" alt="cart"
+                        class="rounded-[50%] bg-[#FF77B5] h-[24px] w-[24px]"></span>
+            </button>
+        </div>
+    </div>
+
+ <header class="bg-white border-b">
+    <div class="container my-auto mx-auto px-4">
+       
+        <div class="flex items-center justify-between h-[50px]">
+            <div class="flex items-center gap-0 md:gap-8">
+             
+                <div class="md:hidden">
+                    <button id="dropdownBtn"
+                        class="flex items-center justify-center w-10 h-10 hover:bg-gray-50 rounded-lg transition-colors">
+                        <svg id="dropdownIcon" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
+                <h1 class="text-xl font-bold">
+                    <span class="text-accent"><img src="../Assets/navbar.png" alt="FreshProduce"
+                            class="h-[21.7px] align-middle justify-center items-center" /></span>
+                </h1>
+
+                <nav class="hidden md:flex items-center gap-6">
+                    <a href="product.html"
+                        class="text-gray-700 flex justify-center items-center bg-[#FFE8B7] rounded-lg p-[3px] font-roboto font-[500] text-[14px] hover:text-primary transition-colors">
+                        <span>Products</span>
+                        <svg class="h-[16px] w-[16px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="text-gray-700 font-roboto font-[500] text-[14px] hover:text-primary transition-colors">
+                        My orders
+                    </a>
+                </nav>
+            </div>
+
+            <div class="hidden md:flex invisible items-center gap-4">
+                <button
+                    class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-light transition-colors">
+                    Get started
+                </button>
+            </div>
+
+            <div class="flex md:hidden items-center gap-4">
+                <button
+                    class="bg-black text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors">
+                    join
+                </button>
+            </div>
+        </div>
+
+        <div id="dropdownContent" class="md:hidden bg-white border-t border-gray-200 overflow-hidden transition-all duration-300 max-h-0">
+            <div class="py-2">
+                <a href="product.html"
+                    class="block px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors font-roboto font-[500]">
+                    Products
+                </a>
+                <a href="#"
+                    class="block px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors font-roboto font-[500]">
+                    Farmers
+                </a>
+                <a href="#"
+                    class="block px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors font-roboto font-[500]">
+                    About
+                </a>
+                <div class="border-t border-gray-200 my-2"></div>
+
+                <a href="#"
+                    class="block px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors font-roboto font-[500]">
+                    Sign up
+                </a>
+                <a href="#"
+                    class="block px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors font-roboto font-[500]">
+                    Log in
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <section class="bg-white border-b h-[50px] py-[10px] ">
+        <div class="container mx-auto flex gap-4">
+            <div class="container w-[76px] h-[36px] px-2 md:px-0 flex justify-around items-center rounded-lg">
+                <button
+                    class="w-[60px] flex justify-center items-center gap-2 px-4 py-2 hover:bg-gray-50 rounded transition-colors">
+                    <span class="justify-center flex items-center h-[20px] w-[38px] font-roboto font-[500] text-[14px]">
+                        <a href="index.html" > Home</a>
+                    </span>
+                    <img src="../Assets/caretRight.svg" class="h-[16px] w-[16px]" alt="">
+                </button>
+
+                <button>
+                    <span
+                        class="justify-center flex items-center font-[600] font-roboto text-[20px] leading-[120%] px-1">
+                        <a href="product.html">Products</a>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="w-full flex justify-between items-center mt-6 px-4">
+            <div class="relative w-3/4 h-[44px] items-center sm:w-3/4 md:mx-6">
+                <i class="fa fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                <input type="text" placeholder="Search"
+                    class="w-full pl-10 pr-4 py-2 rounded-lg ring-[0.5px] ring-gray-300 bg-white focus:outline-none focus:ring-1 focus:ring-gray-100">
+            </div>
+            <div>
+                <button
+                    class="bg-white h-[44px] w-[52px] border border-gray-300 px-2 py-1 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors flex items-center justify-center">
+                    <img src="../Assets/Funnel.svg" alt="filter" class="h-[16px] w-[16px]">
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="w-full flex mt-8 justify-around items-center px-4">
+        <h2
+            class="w-[146px] h-[50px] flex justify-center items-center text-[#212121] text-[36px] leading-[140%] font-[600] font-roboto ">
+            Products
+        </h2>
+        <hr class="ring-[#CECECE] flex justify-center items-center ring-[0.3px] md:w-[1102px] w-[180px]" />
+    </div>
+
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div id="productGrid"
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+
+                <div
+                    class="bg-white p-4 md:p-2 rounded-lg overflow-hidden ring-[0.5px] ring-gray-200 hover:shadow-sm cursor-pointer transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&h=300&fit=crop"
+                            alt="Product" class="w-full h-full object-cover rounded-md" />
+
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">rice grains</h3>
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs ring-[0.2px] bg-blue-100 px-1 py-1 rounded-lg">Organic</span>
+                            <span class="text-xs ring-[0.2px] bg-red-100 px-1 py-1 rounded-lg">Raw</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-[20px] font-[600] font-roboto text-black leading-[140%]">150 Rs/kg</span>
+                            <span class="text-sm text-gray-500">| 250kg left</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="flex items-center border border-gray-300 rounded-md">
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 12H4"></path>
+                                    </svg>
+                                </button>
+                                <span class="px-3 py-2 text-sm font-medium min-w-[3rem] text-center">0 kg</span>
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button
+                                class="border border-gray-300 px-2 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors flex-1">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white p-4 md:p-2 rounded-lg overflow-hidden ring-[0.5px] ring-gray-200 hover:shadow-sm cursor-pointer transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="../Assets/product1.jpg" alt="Product" class="w-full h-full object-cover rounded-lg" />
+                        <div class="absolute bottom-0 left-0 right-0">
+                            <span
+                                class="bg-orange-gradient text-white w-full h-[24px] text-center items-center justify-center flex text-[14px] font-roboto font-[600] leading-[24px] py-1">Fast
+                                selling. Only 45kg left</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">Ponni rice</h3>
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs ring-[0.2px] bg-blue-100 px-1 py-1 rounded-lg">Organic</span>
+                            <span class="text-xs ring-[0.2px] bg-red-100 px-1 py-1 rounded-lg">Raw</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-lg font-bold text-gray-900">150 Rs/kg</span>
+                            <span class="text-sm text-gray-500">| 228kg left</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="flex items-center border border-gray-300 rounded-md">
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 12H4"></path>
+                                    </svg>
+                                </button>
+                                <span class="px-3 py-2 text-sm font-medium min-w-[3rem] text-center">0 kg</span>
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button
+                                class="border border-gray-300 px-2 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors flex-1">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white p-4 md:p-2 rounded-lg overflow-hidden ring-[0.5px] ring-gray-200 hover:shadow-sm cursor-pointer transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="../Assets/product2.jpg" alt="Product" class="w-full h-full object-cover rounded-lg" />
+                        <div class="absolute bottom-0 left-0 right-0">
+                            <span
+                                class="bg-orange-gradient text-white w-full h-[24px] text-center items-center justify-center flex text-[14px] font-roboto font-[600] leading-[24px] py-1">Almost
+                                sold out: Only 20kg left</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">Wheat grains</h3>
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs ring-[0.2px] bg-blue-100 px-1 py-1 rounded-lg">Organic</span>
+                            <span class="text-xs ring-[0.2px] bg-red-100 px-1 py-1 rounded-lg">Raw</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-lg font-bold text-gray-900">150 Rs/kg</span>
+                            <span class="text-sm text-gray-500">| 245kg left</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="flex items-center border border-gray-300 rounded-md">
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 12H4"></path>
+                                    </svg>
+                                </button>
+                                <span class="px-3 py-2 text-sm font-medium min-w-[3rem] text-center">0 kg</span>
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button
+                                class="border border-gray-300 px-2 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors flex-1">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white p-4 md:p-2 rounded-lg overflow-hidden ring-[0.5px] ring-gray-200 hover:shadow-sm cursor-pointer transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="../Assets/product5.jpg" alt="Product" class="w-full h-full object-cover rounded-lg" />
+                        <div class="absolute bottom-0 left-0 right-0">
+                            <span
+                                class="bg-orange-500 text-white w-full h-[24px] text-center items-center justify-center flex text-[14px] font-roboto font-[600] leading-[24px] py-1">Almost
+                                sold out: Only 20kg left</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">Basmati Rice</h3>
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs ring-[0.2px] bg-blue-100 px-1 py-1 rounded-lg">Organic</span>
+                            <span class="text-xs ring-[0.2px] bg-red-100 px-1 py-1 rounded-lg">Raw</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-lg font-bold text-gray-900">150 Rs/kg</span>
+                            <span class="text-sm text-gray-500">| 245kg left</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="flex items-center border border-gray-300 rounded-md">
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 12H4"></path>
+                                    </svg>
+                                </button>
+                                <span class="px-3 py-2 text-sm font-medium min-w-[3rem] text-center">0 kg</span>
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button
+                                class="border border-gray-300 px-2 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors flex-1">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div
+                    class="bg-white p-4 md:p-2 rounded-lg overflow-hidden ring-[0.5px] ring-gray-200 hover:shadow-sm cursor-pointer transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="../Assets/season1.jpg" alt="Product"
+                            class="w-full h-full object-cover rounded-lg" />
+                        <div class="absolute bottom-0 left-0 right-0">
+                            <span
+                                class="bg-accent text-white w-full h-[24px] text-center items-center justify-center flex text-[14px] font-roboto font-[600] leading-[24px] py-1">Fast
+                                selling. Only 45kg left</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">Pumpkin</h3>
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs ring-[0.2px] bg-blue-100 px-1 py-1 rounded-lg">Organic</span>
+                            <span class="text-xs ring-[0.2px] bg-red-100 px-1 py-1 rounded-lg">Raw</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-lg font-bold text-gray-900">150 Rs/kg</span>
+                            <span class="text-sm text-gray-500">| 228kg left</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="flex items-center border border-gray-300 rounded-md">
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 12H4"></path>
+                                    </svg>
+                                </button>
+                                <span class="px-3 py-2 text-sm font-medium min-w-[3rem] text-center">0 kg</span>
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button
+                                class="border border-gray-300 px-2 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors flex-1">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white p-4 md:p-2 rounded-lg overflow-hidden ring-[0.5px] ring-gray-200 hover:shadow-sm cursor-pointer transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="../Assets/product1.jpg" alt="Product" class="w-full h-full object-cover rounded-lg" />
+                        <div class="absolute bottom-0 left-0 right-0">
+                            <span
+                                class="bg-alert text-white w-full h-[24px] text-center items-center justify-center flex text-[14px] font-roboto font-[600] leading-[24px] py-1">Almost
+                                sold out: Only 20kg left</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">Soona Masoori</h3>
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs ring-[0.2px] bg-blue-100 px-1 py-1 rounded-lg">Organic</span>
+                            <span class="text-xs ring-[0.2px] bg-red-100 px-1 py-1 rounded-lg">Raw</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-lg font-bold text-gray-900">150 Rs/kg</span>
+                            <span class="text-sm text-gray-500">| 245kg left</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="flex items-center border border-gray-300 rounded-md">
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 12H4"></path>
+                                    </svg>
+                                </button>
+                                <span class="px-3 py-2 text-sm font-medium min-w-[3rem] text-center">0 kg</span>
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 024 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button
+                                class="border border-gray-300 px-2 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors flex-1">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div
+                    class="bg-white p-4 md:p-2 rounded-lg overflow-hidden ring-[0.5px] ring-gray-200 hover:shadow-sm cursor-pointer transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="../Assets/product2.jpg" alt="Product" class="w-full h-full object-cover rounded-lg" />
+                        <div class="absolute bottom-0 left-0 right-0">
+                            <span
+                                class="bg-alert text-white w-full h-[24px] text-center items-center justify-center flex text-[14px] font-roboto font-[600] leading-[24px] py-1">Almost
+                                sold out: Only 20kg left</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">Wheat grains</h3>
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs ring-[0.2px] bg-blue-100 px-1 py-1 rounded-lg">Organic</span>
+                            <span class="text-xs ring-[0.2px] bg-red-100 px-1 py-1 rounded-lg">Raw</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-lg font-bold text-gray-900">150 Rs/kg</span>
+                            <span class="text-sm text-gray-500">| 245kg left</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="flex items-center border border-gray-300 rounded-md">
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 12H4"></path>
+                                    </svg>
+                                </button>
+                                <span class="px-3 py-2 text-sm font-medium min-w-[3rem] text-center">0 kg</span>
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button
+                                class="border border-gray-300 px-2 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors flex-1">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white p-4 md:p-2 rounded-lg overflow-hidden ring-[0.5px] ring-gray-200 hover:shadow-sm cursor-pointer transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="../Assets/product6.jpg" alt="Product" class="w-full h-full object-cover rounded-lg" />
+                        <div class="absolute bottom-0 left-0 right-0">
+                            <span
+                                class="bg-alert text-white w-full h-[24px] text-center items-center justify-center flex text-[14px] font-roboto font-[600] leading-[24px] py-1">Almost
+                                sold out: Only 20kg left</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">Sea weeds</h3>
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs ring-[0.2px] bg-blue-100 px-1 py-1 rounded-lg">Organic</span>
+                            <span class="text-xs ring-[0.2px] bg-red-100 px-1 py-1 rounded-lg">Raw</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-lg font-bold text-gray-900">150 Rs/kg</span>
+                            <span class="text-sm text-gray-500">| 245kg left</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="flex items-center border border-gray-300 rounded-md">
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 12H4"></path>
+                                    </svg>
+                                </button>
+                                <span class="px-3 py-2 text-sm font-medium min-w-[3rem] text-center">0 kg</span>
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button
+                                class="border border-gray-300 px-2 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors flex-1">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white p-4 md:p-2 rounded-lg overflow-hidden ring-[0.5px] ring-gray-200 hover:shadow-sm cursor-pointer transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="../Assets/product2.jpg" alt="Product" class="w-full h-full object-cover rounded-lg" />
+                        <div class="absolute bottom-0 left-0 right-0">
+                            <span
+                                class="bg-alert text-white w-full h-[24px] text-center items-center justify-center flex text-[14px] font-roboto font-[600] leading-[24px] py-1">Almost
+                                sold out: Only 20kg left</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">Wheat grains</h3>
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs ring-[0.2px] bg-blue-100 px-1 py-1 rounded-lg">Organic</span>
+                            <span class="text-xs ring-[0.2px] bg-red-100 px-1 py-1 rounded-lg">Raw</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-lg font-bold text-gray-900">150 Rs/kg</span>
+                            <span class="text-sm text-gray-500">| 245kg left</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="flex items-center border border-gray-300 rounded-md">
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 12H4"></path>
+                                    </svg>
+                                </button>
+                                <span class="px-3 py-2 text-sm font-medium min-w-[3rem] text-center">0 kg</span>
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button
+                                class="border border-gray-300 px-2 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors flex-1">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white p-4 md:p-2 rounded-lg overflow-hidden ring-[0.5px] ring-gray-200 hover:shadow-sm cursor-pointer transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="../Assets/season4.jpg" alt="Product"
+                            class="w-full h-full object-cover rounded-md" />
+                        <div class="absolute bottom-0 left-0 right-0">
+                            <span
+                                class="bg-alert text-white w-full h-[24px] text-center items-center justify-center flex text-[14px] font-roboto font-[600] leading-[24px] py-1">Almost
+                                sold out: Only 20kg left</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">Swiss chards</h3>
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs ring-[0.2px] bg-blue-100 px-1 py-1 rounded-lg">Organic</span>
+                            <span class="text-xs ring-[0.2px] bg-red-100 px-1 py-1 rounded-lg">Raw</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-[20px] font-[600] font-roboto text-black leading-[140%]">150 Rs/kg</span>
+                            <span class="text-sm text-gray-500">| 250kg left</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="flex items-center border border-gray-300 rounded-md">
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 12H4"></path>
+                                    </svg>
+                                </button>
+                                <span class="px-3 py-2 text-sm font-medium min-w-[3rem] text-center">0 kg</span>
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button
+                                class="border border-gray-300 px-2 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors flex-1">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white p-4 md:p-2 rounded-lg overflow-hidden ring-[0.5px] ring-gray-200 hover:shadow-sm cursor-pointer transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="../Assets/season3.jpg" alt="Product" class="w-full h-full object-cover rounded-lg" />
+                        <div class="absolute bottom-0 left-0 right-0">
+                            <span
+                                class="bg-alert text-white w-full h-[24px] text-center items-center justify-center flex text-[14px] font-roboto font-[600] leading-[24px] py-1">Almost
+                                sold out: Only 20kg left</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">Green tomato</h3>
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs ring-[0.2px] bg-blue-100 px-1 py-1 rounded-lg">Organic</span>
+                            <span class="text-xs ring-[0.2px] bg-red-100 px-1 py-1 rounded-lg">Raw</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-lg font-bold text-gray-900">150 Rs/kg</span>
+                            <span class="text-sm text-gray-500">| 245kg left</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="flex items-center border border-gray-300 rounded-md">
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 12H4"></path>
+                                    </svg>
+                                </button>
+                                <span class="px-3 py-2 text-sm font-medium min-w-[3rem] text-center">0 kg</span>
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button
+                                class="border border-gray-300 px-2 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors flex-1">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white p-4 md:p-2 rounded-lg overflow-hidden ring-[0.5px] ring-gray-200 hover:shadow-sm cursor-pointer transition-shadow">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="../Assets/season2.jpg" alt="Product"
+                            class="w-full h-full object-cover rounded-lg" />
+                        <div class="absolute bottom-0 left-0 right-0">
+                            <span
+                                class="bg-accent text-white w-full h-[24px] text-center items-center justify-center flex text-[14px] font-roboto font-[600] leading-[24px] py-1">Fast
+                                selling. Only 45kg left</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">Cabbages</h3>
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-xs ring-[0.2px] bg-blue-100 px-1 py-1 rounded-lg">Organic</span>
+                            <span class="text-xs ring-[0.2px] bg-red-100 px-1 py-1 rounded-lg">Raw</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-lg font-bold text-gray-900">150 Rs/kg</span>
+                            <span class="text-sm text-gray-500">| 228kg left</span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="flex items-center border border-gray-300 rounded-md">
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 12H4"></path>
+                                    </svg>
+                                </button>
+                                <span class="px-3 py-2 text-sm font-medium min-w-[3rem] text-center">0 kg</span>
+                                <button class="p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="h-2 w-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 4v16m8-8H4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button
+                                class="border border-gray-300 px-2 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors flex-1">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="w-full flex justify-center mt-8 px-4 mb-12">
+        <div class="flex items-center md:gap-6 gap-4 text-sm text-gray-700">
+            <button id="firstPageBtn"
+                class="flex items-center gap-1 px-2 py-2 rounded-lg ring-[0.5px] ring-gray-200 hover:bg-gray-50 transition">
+                <span class="text-gray-400 text-base">«</span>
+                <span id="pageButton" class="text-gray-800">Page 1</span>
+            </button>
+
+            <button id="prevBtn"
+                class="flex items-center gap-1 px-3 py-2 rounded-lg ring-[0.5px] ring-gray-200 hover:bg-gray-50 transition">
+                <span class="text-gray-400 text-base">←</span> Previous
+            </button>
+
+            <span class="text-gray-500 flex items-center gap-1">
+                Page
+                <span id="currentPage" class="font-semibold text-gray-800">1</span>
+                of
+                <span id="totalPages" class="font-semibold text-gray-800">3</span>
+            </span>
+
+            <button id="nextBtn"
+                class="flex items-center gap-1 px-3 py-2 rounded-lg ring-[0.5px] ring-gray-200 hover:bg-gray-50 transition">
+                Next <span class="text-gray-400 text-base">→</span>
+            </button>
+        </div>
+    </div>
+
+    <footer class="w-full bg-white text-[#4B5563] pt-16 px-8 md:px-20">
+        <div class="flex flex-col md:flex-row gap-12 pb-14">
+            <div class="flex flex-col max-w-[300px]">
+                <img src="../Assets/navbar.png" class="w-[130px] mb-4" alt="FreshProduce Logo" />
+                <p class="text-[14px] leading-[150%] mb-6">
+                    Join and sign up for free to start selling and buying fresh goods
+                    directly from the farmers.
+                </p>
+
+                <button
+                    class="w-[146px] h-[44px] flex items-center gap-2 border border-[#D1D5DB] px-4 py-2 rounded-[8px] text-[14px] hover:bg-gray-50">
+                    Join for free
+                    <i class="fa-solid fa-arrow-right text-[12px]"></i>
+                </button>
+            </div>
+
+            <div class="flex flex-row md:flex-row justify-start md:justify-around flex-1 gap-14">
+                <div class="flex flex-col">
+                    <span class="font-semibold text-[16px] mb-4">Useful Links</span>
+                    <a href="#" class="text-[14px] hover:text-black mb-2">About Us</a>
+                    <a href="#" class="text-[14px] hover:text-black mb-2">Contact Us</a>
+                    <a href="#" class="text-[14px] hover:text-black mb-2">Support Center</a>
+                    <a href="#" class="text-[14px] hover:text-black">Blog Posts</a>
+                </div>
+
+                <div class="flex flex-col">
+                    <span class="font-semibold text-[16px] mb-4">Follow Us</span>
+
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="fa-brands fa-facebook text-[18px]"></i>
+                        <a href="#" class="text-[14px] hover:text-black">Facebook</a>
+                    </div>
+
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="fa-brands fa-instagram text-[18px]"></i>
+                        <a href="#" class="text-[14px] hover:text-black">Instagram</a>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <i class="fa-brands fa-youtube text-[18px]"></i>
+                        <a href="#" class="text-[14px] hover:text-black">YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-[#E5E7EB] mb-6" />
+
+        <div class="flex flex-col md:flex-row justify-between items-center pb-6 text-[13px]">
+            <p>© 2025 | All rights reserved.</p>
+
+            <div class="flex gap-6 mt-2 md:mt-0">
+                <a href="#" class="hover:text-black">Privacy Policy</a>
+                <a href="#" class="hover:text-black">Terms of Service</a>
+                <a href="#" class="hover:text-black">Cookies Settings</a>
+            </div>
+        </div>
+    </footer>
+
+   <script src="products.js></script>
+</body>
+
+</html>
